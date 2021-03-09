@@ -21,7 +21,7 @@ _A javascript librairy to make your own cps tester_
 >   2. [`clock`](#class_clock)
 >   3. [`result`](#class_result)
 
-## What is what ? {#whats_what}
+## [What is what ?]{#whats_what}
 > here you'll know what's the function of each classes than you can use
 > let's start with the classes that you musn't use more than once
 > ### starter {#class_starter}
