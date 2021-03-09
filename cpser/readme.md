@@ -2,10 +2,14 @@
 _A javascript librairy to make your own cps tester_  
   
 > ## How to install ?
-> add the script code `<script src="https://flylibs.netlify.app/cpser/cpser.js"></script>` in the bottom of your page (between `</body>` and `</html>`)  
+> add the script code  
+> ```html
+> <script src="https://flylibs.netlify.app/cpser/cpser.js"></script>
+> ```
+> in the bottom of your page (between `</body>` and `</html>`)  
   
-> ## How to use ?
-> the libray will use the elements' class name to now what is what.  
+## How it works ?
+> the libray will use the elements' class name to now [what is what](#whats_what).  
 > So there is the differents class witch you can use:  
 > * Classes that you must use once
 >   1. [`starter`](#class_starter)
@@ -16,3 +20,9 @@ _A javascript librairy to make your own cps tester_
 >   1. [`clicks`](#class_clicks)
 >   2. [`clock`](#class_clock)
 >   3. [`result`](#class_result)
+
+## What is what ? {#whats_what}
+> here you'll know what's the function of each classes than you can use
+> let's start with the classes that you musn't use more than once
+> ### starter {#class_starter}
+>> 
