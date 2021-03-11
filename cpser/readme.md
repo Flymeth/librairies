@@ -6,7 +6,7 @@
 > ```html
 > <script src="https://flylibs.netlify.app/cpser/cpser.js"></script>
 > ```
-> in the bottom of your page (between `</body>` and `</html>`)  
+> in the bottom of your page (before the `</body>` element)  
   
 ## How it works ?
 > the libray will use the elements' class name to now [what is what](#whats_what).  
