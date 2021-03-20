@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root {
+    --darkColor: #262626;
+    --semiDarkColor: #70798C;
+    --lightColor: #E4DFDA;
+}
+*,::before,::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: linear-gradient(to bottom right, var(--darkColor), var(--semiDarkColor));
+    color: var(--darkColor);
+}
+
+a {
+    text-decoration: none;
+    color: var(--lightColor);
+    position: relative;
+}
+a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2.5pt;
+    height: 2.5pt;
+    width: 15%;
+
+    background-color: var(--lightColor);
+
+    border-radius: 50pt;
+
+    transition: width .25s;
+}
+a:hover::before {
+    width: 100%;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    min-height: 5vh;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 5pt 15pt;
+
+    backdrop-filter: blur(2.5pt);
+    -webkit-backdrop-filter: blur(2.5pt);
+
+    user-select: none;
+    -webkit-user-select: none;
+}
+nav h1 {
+    color: var(--semiDarkColor);
+    font-size: 25pt;
+}
+
+/* Navs */
+
+.menu * {
+    list-style: none;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu>li {
+    position: relative;
+    margin: 0 15pt;
+    padding: 5pt;
+    cursor: pointer;
+}
+.menu-content {
+    max-height: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 100%;
+
+    text-align: left;
+    
+    transition: max-height .5s, padding .5s;
+}
+.menu>li:hover>.menu-content {
+    max-height: 13em;
+    padding: 0 5pt;
+    transition: max-height .25s, padding .5s;
+}
+.menu-content>li {
+    margin: 5pt 0;
+    position: relative;
+
+    transition: color .5s 0s;
+}
+
+.menu-inner {
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height .5s 0s;
+}
+
+.menu-content li:hover {
+    color: var(--lightColor);
+}
+.menu-content li:hover>.menu-inner {
+    max-height: 5em;
+}
+.menu-inner>li {
+    margin: 5pt 0;
+}
+
+/* header */
+
+.title {
+    font-size: 25pt;
+}
+
+/* main */
+
+/* medias */
+
+@media screen and (max-width: 375px) {
+    .menu>li {
+        margin: 0 5pt;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .menu>li {
+        margin: 0;
+    }
+}
