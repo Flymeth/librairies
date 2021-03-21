@@ -30,3 +30,22 @@ if(navigator.userAgent.toLowerCase().includes('mobile')) {
 }else {
     document.body.classList.add('pc')
 }
+
+// show/hide menu
+let s=0
+window.addEventListener('scroll', () => {
+    nav()
+})
+function nav() {
+    let nav = document.querySelector('nav')
+    if(window.scrollY<window.innerHeight/4*3) {
+        return nav.classList.remove('hide')
+    }
+    if(s<window.scrollY) {
+        nav.classList.add('hide')
+    }else {
+        nav.classList.remove('hide')
+    }
+    s=window.scrollY
+}
+nav()
