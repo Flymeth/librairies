@@ -57,7 +57,7 @@ nav {
     position: fixed;
     left: 0;
     top: 0;
-    width: 100vw;
+    right: 0;
     min-height: 5vh;
 
     z-index: 1;
@@ -156,25 +156,25 @@ main {
     padding: 0 15pt;
 }
 main a {
-    padding: .5pt 2.5pt;
-    border: 1.5pt dashed var(--darkColor);
-    transition: border-width .5s, padding .5s;
+    padding: 3pt;
+    color: var(--semiDarkColor);
+    text-decoration: underline;
+    transition: color .5s;
 }
 main a:hover {
-    border-width: .5pt;
-    padding: 2.5pt 4.5pt;
+    color: var(--lightColor);
 }
 main a::before {
     height: 100%;
-    border-radius: 0 50pt 50pt 0;
+    border-radius: 0;
     z-index: -1;
-    background-color: var(--darkColor);
+    background-color: var(--semiDarkColor);
     width: 0;
     transition: .5s;
 }
 main a:hover::before {
     width: 100%;
-    border-radius: 0;
+    border-radius: 2.5pt;
 }
 
 section {
@@ -215,14 +215,25 @@ section>h2::before {
 
 /* me section */
 
+#me a {
+    color: var(--darkColor);
+}
+#me a:hover {
+    color: var(--lightColor);
+}
+#me a::before {
+    background-color: var(--darkColor);
+}
+
 #me img {
     float: left;
-    width: 25%;
+    width: 200pt;
     border-radius: 50%;
+    shape-outside: circle();
 }
 
 #me p {
-    /* faire en sorte que le texte s'align sur le border radius de l'img */
+    margin: 10pt 0;
 }
 
 /* medias */
@@ -236,5 +247,14 @@ section>h2::before {
 @media screen and (max-width: 315px) {
     .menu>li {
         margin: 0;
+    }
+}
+
+@media screen and (max-width: 752px) {
+    #me img {
+        float: none;
+        width: 50%;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
 }
