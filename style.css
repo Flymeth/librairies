@@ -5,6 +5,9 @@
     --semiDarkColor: #70798C;
     --lightColor: #E4DFDA;
 }
+html {
+    scroll-behavior: smooth;
+}
 *,::before,::after {
     margin: 0;
     padding: 0;
@@ -13,7 +16,7 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
     background-image: linear-gradient(to bottom right, var(--darkColor), var(--semiDarkColor));
-    color: var(--darkColor);
+    color: var(--lightColor);
 }
 
 a {
@@ -46,6 +49,8 @@ header {
     align-items: center;
     justify-content: space-evenly;
     text-align: center;
+    overflow: hidden;
+    color: var(--darkColor);
 }
 
 nav {
@@ -88,6 +93,9 @@ nav h1 {
     padding: 5pt;
     cursor: pointer;
 }
+.mobile .menu>li {
+    cursor: initial;
+}
 .menu-content {
     max-height: 0;
     position: absolute;
@@ -97,7 +105,7 @@ nav h1 {
 
     text-align: left;
     
-    transition: max-height .5s, padding .5s;
+    transition: max-height .5s .25s, padding .5s .25s;
 }
 .menu>li:hover>.menu-content {
     max-height: 13em;
@@ -132,9 +140,14 @@ nav h1 {
 
 .title {
     font-size: 25pt;
+    text-shadow: 1.5pt 1.5pt 2.5pt var(--lightColor), -1.5pt -1.5pt 2.5pt var(--semiDarkColor);
 }
 
 /* main */
+
+main > section {
+    min-height: 100vh;
+}
 
 /* medias */
 
