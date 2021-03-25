@@ -42,6 +42,32 @@ a:hover::before {
     width: 100%;
 }
 
+pre {
+    width: 85%;
+    margin: 0 auto;
+    background-color: rgba(0,0,0,.25);
+    padding: 10pt;
+    border-radius: 15pt;
+    box-shadow: 0 5pt rgba(0,0,0,.20);
+    transition: transform .15s;
+    overflow-x: scroll;
+}
+pre::-webkit-scrollbar {
+    background-color: transparent;
+    height: 5pt;
+    width: 2.5pt;
+}
+pre::-webkit-scrollbar-corner {
+    display: none;
+}
+pre::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right, transparent 5%, var(--lightColor) 45% 55%, transparent 100% 5%);
+    border-radius: 50pt;
+}
+.pc pre:hover {
+    transform: scale(1.025);
+}
+
 header {
     min-height: 100vh;
     display: flex;
