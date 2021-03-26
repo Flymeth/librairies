@@ -247,7 +247,7 @@ section>div {
 }
 
 section p {
-    margin: 5pt 0;
+    margin: 7.5pt 0;
 }
 
 section h3 {
@@ -259,12 +259,11 @@ section h3::before {
 }
 
 section h4 {
-    margin: 5pt 0;
+    margin: 15pt 0 10pt 0;
 }
 
 section h5 {
     margin: 15pt 10pt;
-    text-transform: lowercase;
     text-decoration: underline;
 }
 section h5::before {
@@ -273,6 +272,10 @@ section h5::before {
 
 section ol, ul {
     list-style-position: inside;
+}
+
+section ul li {
+    margin: 2.5pt 0;
 }
 
 section ol li {

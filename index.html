@@ -70,8 +70,8 @@
                 <h3>Documentation</h3>
                 <div>
                     <h4>Installation</h4>
-                    <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt</code> </p>
-                    <pre class="format allSelect"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
+                    <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code> </p>
+                    <pre class="format"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
                     <h4>Utilisation</h4>
                     <p>La librairie va utiliser les différentes classes que vous attribuez à certain éléments pour savoir comment l'élément va oppérer.</p>
                     <p>Certaines classes ne peuvent être utilisé qu'une seule fois, tandis que pour d'autre, vous pouvez les mettres dans autant d'élément que vous le souhaitez.</p>
@@ -92,6 +92,21 @@
                             </ol>
                         </li>
                     </ul>
+                    <p>Le comportement du jeu peut aussi être modifié !</p>
+                    <p>Pour cela, ajoutez une balise <code>&lt;meta></code> dans le <code>&lt;head></code> de votre page.</p>
+                    <p>Puis, configurez la comme ceci:</p>
+<pre class="format">
+<meta name="cpserOptions" content="PROPS1=VALUE, PROPS2=VALUE">
+</pre>
+                    <p>Voici la liste des options que vous pouvez mettre:</p>
+                    <ul>
+                        <li><a href="#cps-option-defaultTimerValue">defaultTimerValue</a></li>
+                        <li><a href="#cps-option-minTimerValue">minTimerValue</a></li>
+                        <li><a href="#cps-option-maxTimerValue">maxTimerValue</a></li>
+                        <li><a href="#cps-option-TimerSteps">TimerSteps</a></li>
+                        <li><a href="#cps-option-resultArrounds">resultArrounds</a></li>
+                    </ul>
+                    <hr>
                     <h5 id="cps-starter">starter</h5>
                     <p>Lors du click, le système le system de cps va se lancer. Cela comprend le timer, ainsi que le fais que vous puissiez clicker sur le bouton du clicker.</p>
                     <h5 id="cps-restarter">restarter</h5>
@@ -108,6 +123,23 @@
                     <p>C'est sur cet/ces élément(s) que le temps restant sera afficher.</p>
                     <h5 id="cps-result">result</h5>
                     <p>Quand le timer est finis, cet élément affichera le nombre de cps de l'utilisateur.</p>
+                    <hr>
+                    <h5 id="cps-option-defaultTimerValue">defaultTimerValue</h5>
+                    <p>Cette valeur est la valeur par défaut du timer. A noter qu'elle doit être comprise entre la valeur minimal et maximal du timer !</p>
+                    <h5 id="cps-option-minTimerValue">minTimerValue</h5>
+                    <p>La valeur minimal que le timer peut avoir</p>
+                    <h5 id="cps-option-maxTimerValue">maxTimerValue</h5>
+                    <p>La valeur maximal que le timer peut avoir</p>
+                    <h5 id="cps-cps-option-timerSteps">TimerSteps</h5>
+                    <p>La précision du timer.</p>
+                    <p>Ex: <br>Si elle est de 1, le timer fera "5; 4; 3, ...", <br>Si elle est de 0.1, le timer fera "5.0; 4.9; 4.8; ..."</p>
+                    <h5 id="cps-option-resultArrounds">resultArrounds</h5>
+                    <p>La précision du résultat.</p>
+                    <p>Ex: <br>Si cette option est égal à 0.1, le résultat sera (par exemple): "4.6"</p>
+                    <hr>
+                    <h4>Tips !</h4>
+                    <p><code>&lt;body&gt;</code> prendra la classe "cps-started" si le timer a commencé, et "cps-ended" si le timer est terminé !</p>
+                    <p>A noter que si le jeu n'a pas commencé, <code>&lt;body&gt;</code> n'aura aucune classe.</p>
                 </div>
             </div>
             <div id="cpser:exemples" class="ex">
@@ -128,23 +160,6 @@
 <button class="restarter clock result">Restart ?</button>
 <!-- ici le timer ne peut pas être changé -->
 </pre>
-                    <h4>Exemple avec resultat</h4>
-                    <h5>HTML</h5>
-<pre class="format">
-<button class="starter clicker">commencer ?</button>
-<button class="restarter">reset ?</button>
-<p>Timer: <span class="clock"></span></p>
-<p>Clicks: <span class="clicks"></span></p>
-<p>Tu as <span class="result"></span>cps</p>
-</pre>
-                    <h5>résulat</h5>
-                    <div class="result">
-                        <button class="starter clicker">commencer ?</button>
-                        <button class="restarter">reset ?</button>
-                        <p>Timer: <span class="clock"></span></p>
-                        <p>Clicks: <span class="clicks"></span></p>
-                        <p>Tu as <span class="result"></span>cps</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -174,8 +189,9 @@
 
     </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- <script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script> -->
+    <script src="/htmlFormat/htmlFormat.js"></script>
     <script src="https://flylibs.netlify.app/cpser/cpser.js"></script>
-    <script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script>
     <script src="/main.js"></script>
 </body>
 </html>
