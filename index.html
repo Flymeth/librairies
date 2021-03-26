@@ -65,17 +65,94 @@
             </ol>
         </section>
         <section id="cpser">
-            <div id="cpser:doc">
-
+            <h2>CPSer</h2>
+            <div id="cpser:doc" class="doc">
+                <h3>Documentation</h3>
+                <div>
+                    <h4>Installation</h4>
+                    <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt</code> </p>
+                    <pre class="format allSelect"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
+                    <h4>Utilisation</h4>
+                    <p>La librairie va utiliser les différentes classes que vous attribuez à certain éléments pour savoir comment l'élément va oppérer.</p>
+                    <p>Certaines classes ne peuvent être utilisé qu'une seule fois, tandis que pour d'autre, vous pouvez les mettres dans autant d'élément que vous le souhaitez.</p>
+                    <ul>
+                        <li>Classes à n'utiliser qu'une seule fois:
+                            <ol>
+                                <li><a href="#cps-starter">starter</a></li>
+                                <li><a href="#cps-restarter">restarter</a></li>
+                                <li><a href="#cps-clicker">clicker</a></li>
+                                <li><a href="#cps-timer">timer</a></li>
+                            </ol>
+                        </li>
+                        <li>Classes utilisable plusieurs fois:
+                            <ol>
+                                <li><a href="#cps-clicks">clicks</a></li>
+                                <li><a href="#cps-clock">clock</a></li>
+                                <li><a href="#cps-result">result</a></li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <h5 id="cps-starter">starter</h5>
+                    <p>Lors du click, le système le system de cps va se lancer. Cela comprend le timer, ainsi que le fais que vous puissiez clicker sur le bouton du clicker.</p>
+                    <h5 id="cps-restarter">restarter</h5>
+                    <p>Ce bouton va servir a remettre le system à 0. Il va reset le timer, le nombre de cps et le resultat.</p>
+                    <h5 id="cps-clicker">clicker</h5>
+                    <p>C'est sur cet element que l'utilisateur va pouvoir clicker le plus de fois qu'il puisse.</p>
+                    <h5 id="cps-timer">timer</h5>
+                    <p>Cet élément doit obligatoirement être du type <code>&lt;input&gt;</code>. Cet élement va pouvoir servir à l'utilisateur de changer le temps du timer.</p>
+                    <p>Vous n'êtes pas obligé d'utiliser cette classe.</p>
+                    <hr>
+                    <h5 id="cps-clicks">clicks</h5>
+                    <p>Si un élément possède cette classe, il affichera le nombre de click que l'utilisateur a fais depuis le début du timer.</p>
+                    <h5 id="cps-clock">clock</h4>
+                    <p>C'est sur cet/ces élément(s) que le temps restant sera afficher.</p>
+                    <h5 id="cps-result">result</h5>
+                    <p>Quand le timer est finis, cet élément affichera le nombre de cps de l'utilisateur.</p>
+                </div>
             </div>
-            <div id="cpser:exemples">
+            <div id="cpser:exemples" class="ex">
+                <h3>Exemples</h3>
+                <div>
+                    <h4>Exemple #1</h4>
+<pre class="format">
+<button class="starter clicker">Clickez ici !</button>
+<button class="restarter">Recommencer ?</button>
+
+<input type="number" placeholder="Changer le timer ?">
+
+<p>Clicks: <span class="clicks"></span>, Timer: <span class="clock"></span>, Résultat: <span class="result"></span>cps</p>
+</pre>
+                    <h4>Exemple #2</h4>
+<pre class="format">
+<button class="starter clicker clicks">Click here !</button>
+<button class="restarter clock result">Restart ?</button>
+<!-- ici le timer ne peut pas être changé -->
+</pre>
+                    <h4>Exemple avec resultat</h4>
+                    <h5>HTML</h5>
+<pre class="format">
+<button class="starter clicker">commencer ?</button>
+<button class="restarter">reset ?</button>
+<p>Timer: <span class="clock"></span></p>
+<p>Clicks: <span class="clicks"></span></p>
+<p>Tu as <span class="result"></span>cps</p>
+</pre>
+                    <h5>résulat</h5>
+                    <div class="result">
+                        <button class="starter clicker">commencer ?</button>
+                        <button class="restarter">reset ?</button>
+                        <p>Timer: <span class="clock"></span></p>
+                        <p>Clicks: <span class="clicks"></span></p>
+                        <p>Tu as <span class="result"></span>cps</p>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="htmlformat">
-            <div id="htmlformat:doc">
+            <div id="htmlformat:doc" class="doc">
 
             </div>
-            <div id="htmlformat:exemples">
+            <div id="htmlformat:exemples" class="ex">
 
             </div>
         </section>
