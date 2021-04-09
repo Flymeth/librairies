@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyLibs</title>
-    <meta name="htmlFormatOptions" content="blackColor=#fff, greenColor=#FF5959, yellowColor=#018600, blueColor=#655BFF, greyColor=#D1D1D1">
+    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; balises=#D1D1D1; propsIncludesEgals=false">
 
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -161,14 +161,125 @@
 <!-- ici le timer ne peut pas être changé -->
 </pre>
                 </div>
+                <h3>Exemple concret</h3>
+                <h4>Ce que vous écrivez:</h4>
+<pre class="format">
+<!-- Le code que vous pourriez mettre -->
+
+<meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
+<!-- ATTENTION: pour l'exemple la balise <meta> se trouve dans le body, mais celle si doit se trouver obligatoirement dans le <head> du document !! -->
+
+<button class="starter clicker clicks">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
+<button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
+<p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
+<p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
+</pre>
+                <h4>Ce que CPSer vous renvoie:</h4>
+                <h6 style="margin: 5pt 0;">(un style a été appliqué)</h6>
+                <div class="cps-result" style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; background-color: whitesmoke; padding: 15pt; border-radius: 5pt; color: black">
+                    <!-- Le code que vous pourriez mettre -->
+
+                    <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
+                    <!-- ATTENTION: pour l'exemple la balise <meta> se trouve dans le body, mais celle si doit se trouver obligatoirement dans le <head> du document !! -->
+
+                    <button class="starter clicker clicks" style="margin: 0 0 5pt 0;">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
+                    <button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
+                    <p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
+                    <p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
+                </div>
             </div>
         </section>
         <section id="htmlformat">
+            <h2>htmlFormat</h2>
             <div id="htmlformat:doc" class="doc">
+                <h3>Documentation</h3>
+                <h4>Installation</h4>
+                <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code></p>
+                <pre class="format"><script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script></pre>
+                <h4>Utilisation</h4>
+                <p>Cette librairie va simplement regarder les éléments avec la classe <code>format</code> et va mettre en forme le contenue de celles-ci.</p>
+                <p>Vous pouvez aussi choisir vos propres couleurs de mise en forme !</p>
+                <ul>
+                    <li><a href="#useIt">bien utiliser la librairie</a></li>
+                    <li><a href="#useYourColors">Utiliser vos couleurs</a></li>
+                    <li><a href="#moreOptions">Plus de paramètres</a></li>
+                </ul>
+                <hr>
+                <h5 id="useIt">Bien utiliser la librairie</h5>
+                <p>Pour bien comprendre ce que va regarder et formatter la librairie, voici un code vous l'expliquant:</p>
+<pre class="format">
+<div class="une-div">
+    <h1>Un titre</h1>
+    <p>Un paragraphe</p>
+</div>
+<!-- cette div n'est pas formatté car elle ne possède pas la classe "format" -->
 
+<div class="format">
+    <h1>Un titre</h1>
+    <p>Un paragraphe</p>
+</div>
+<!-- En revanche, celle-ci sera formatté, étant donné qu'elle possède bien la classe "format" -->
+</pre>
+                <p>TIP: utilisez les balises <code>&lt;pre></code> pour mettre votre code à l'interrieur, sinon les indetations et les sauts de lignes ne seront pas prix en compte !</p>
+                <h5 id="useYourColors">Utiliser vos couleurs</h5>
+                <p>Pour paramétrer vos propres couleurs, vous devez inclure dans le <code>&lt;head></code> de votre document une balise <code>&lt;meta></code> de la façons suivante:</p>
+<pre class="format">
+<meta name="htmlFormatOptions" content="PROP1=VALUE1; PROP2=VALUE2;...">
+</pre>
+                <p>Voici un tableau avec les propriétés que vous pouvez entrer ainsi que leur fonctions:</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>propriétés</th>
+                            <th>descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>elements</td>
+                            <td>le nom des élémets des balises (ex: section, div, h1...)</td>
+                        </tr>
+                        <tr>
+                            <td>props</td>
+                            <td>les attributs des éléments (ex: class, href, id...).</td>
+                        </tr>
+                        <tr>
+                            <td>balises</td>
+                            <td>les balises des éléments (ex: <, >, /)</td>
+                        </tr>
+                        <tr>
+                            <td>texts</td>
+                            <td>les textes en dehors des balises</td>
+                        </tr>
+                        <tr>
+                            <td>strings</td>
+                            <td>les chaînes de caractères dans les balises (ex: class="ceci est une chaine de caractère")</td>
+                        </tr>
+                        <tr>
+                            <td>notes</td>
+                            <td>tous les commentaires (ex: &lt;!-- ceci est un commentaire -->)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h5 id="moreOptions">Plus d'options</h5>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>propriétés</th>
+                            <th>descriptions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>propsIncludesEgals</td>
+                            <td>[boolean] inclure oui ou non les "=" dans la couleurs des attributs des balises</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             <div id="htmlformat:exemples" class="ex">
-
+                <h3>Exemples</h3>
+                <h4>[EN PREPARATION]</h4>
             </div>
         </section>
         <section id="me">
@@ -189,9 +300,8 @@
 
     </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <!-- <script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script> -->
     <script src="/htmlFormat/htmlFormat.js"></script>
-    <script src="https://flylibs.netlify.app/cpser/cpser.js"></script>
+    <script src="https://flylibs.netlify.app/CPSer/CPSer.js"></script>
     <script src="/main.js"></script>
 </body>
 </html>

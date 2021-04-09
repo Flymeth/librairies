@@ -107,13 +107,15 @@ nav {
     justify-content: space-between;
     align-items: center;
 
-    padding: 5pt 15pt;
+    padding: 10pt 15pt;
 
     backdrop-filter: blur(2.5pt);
     -webkit-backdrop-filter: blur(2.5pt);
 
     user-select: none;
     -webkit-user-select: none;
+
+    box-shadow: 0 0 5pt var(--darkColor);
 
     transition: top .5s;
 }
@@ -150,6 +152,11 @@ nav h1 {
     overflow: hidden;
     left: 0;
     top: 100%;
+
+    background-color: rgba(0,0,0,.05);
+    box-shadow: 0 0 5pt rgba(255,255,255,.05);
+    
+    border-radius: 5pt;
 
     text-align: left;
     
@@ -216,6 +223,44 @@ main a::before {
 main a:hover::before {
     width: 100%;
     border-radius: 2.5pt;
+}
+
+main table {
+    text-align: center;
+    color: var(--darkColor);
+    margin: 15pt 0;
+    border: 1.5pt solid var(--darkColor);
+    
+    background-color: var(--lightColor);
+    
+    border-collapse: collapse;
+}
+main thead {
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+}
+
+main table tbody tr {
+    border: 0 dashed var(--darkColor);
+}
+main table tbody tr {
+    border-width: 1.5pt 0;
+}
+main table tr>td:nth-child(1) {
+    border: inherit;
+    border-right-width: 2.5pt;
+    border-right-style: solid;
+    -moz-user-select: all;
+    -webkit-user-select: all;
+    user-select: all;
+}
+main table tr:nth-child(even) {
+    background-color: var(--semiDarkColor);
+}
+main table tr>* {
+    width: 50%;
+    padding: 15pt;
+
 }
 
 section {
