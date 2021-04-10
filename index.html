@@ -106,37 +106,102 @@
                         <li><a href="#cps-option-TimerSteps">TimerSteps</a></li>
                         <li><a href="#cps-option-resultArrounds">resultArrounds</a></li>
                     </ul>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Classes à n'utiliser qu'une seule fois</th>
+                            </tr>
+                            <tr>
+                                <th>Classes</th>
+                                <th>propriétés</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="cps-starter">starter</td>
+                                <td>Lors du click, le système le system de cps va se lancer. Cela comprend le timer, ainsi que le fais que vous puissiez clicker sur le bouton du clicker.</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-restarter">restarter</td>
+                                <td>Ce bouton va servir a remettre le system à 0. Il va reset le timer, le nombre de cps et le resultat.</td>
+                            </tr>
+                            <tr>
+                                <td id="clicker">clicker</td>
+                                <td>C'est sur cet element que l'utilisateur va pouvoir clicker le plus de fois qu'il puisse.</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-timer">timer</td>
+                                <td>Cet élément doit obligatoirement être du type <code>&lt;input&gt;</code>. Cet élement va pouvoir servir à l'utilisateur de changer le temps du timer. <br>Cette classe n'est pas obligatoire !</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <hr>
-                    <h5 id="cps-starter">starter</h5>
-                    <p>Lors du click, le système le system de cps va se lancer. Cela comprend le timer, ainsi que le fais que vous puissiez clicker sur le bouton du clicker.</p>
-                    <h5 id="cps-restarter">restarter</h5>
-                    <p>Ce bouton va servir a remettre le system à 0. Il va reset le timer, le nombre de cps et le resultat.</p>
-                    <h5 id="cps-clicker">clicker</h5>
-                    <p>C'est sur cet element que l'utilisateur va pouvoir clicker le plus de fois qu'il puisse.</p>
-                    <h5 id="cps-timer">timer</h5>
-                    <p>Cet élément doit obligatoirement être du type <code>&lt;input&gt;</code>. Cet élement va pouvoir servir à l'utilisateur de changer le temps du timer.</p>
-                    <p>Vous n'êtes pas obligé d'utiliser cette classe.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Classes pouvant être utilisé plusieurs fois</th>
+                            </tr>
+                            <tr>
+                                <th>classes</th>
+                                <th>propriétés</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="cps-clicks">clicks</td>
+                                <td>affiche le nombre de click que l'utilisateur a fais depuis le début du timer.</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-clock">clock</td>
+                                <td>Affiche le temps restant</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-result">result</td>
+                                <td>Affiche le résultat (en click/seconde)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
                     <hr>
-                    <h5 id="cps-clicks">clicks</h5>
-                    <p>Si un élément possède cette classe, il affichera le nombre de click que l'utilisateur a fais depuis le début du timer.</p>
-                    <h5 id="cps-clock">clock</h4>
-                    <p>C'est sur cet/ces élément(s) que le temps restant sera afficher.</p>
-                    <h5 id="cps-result">result</h5>
-                    <p>Quand le timer est finis, cet élément affichera le nombre de cps de l'utilisateur.</p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Paramètres du jeu</th>
+                            </tr>
+                            <tr>
+                                <th>paramètres</th>
+                                <th>valeurs</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td id="cps-option-defaultTimerValue">defaultTimerValue</td>
+                                <td>La valeur par défaut du timer. A noter qu'elle doit être comprise entre la valeur minimal et maximal du timer !</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-option-minTimerValue">minTimerValue</td>
+                                <td>La valeur minimal du timer.</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-option-maxTimerValue">maxTimerValue</td>
+                                <td>La valeur maximal du timer.</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-cps-option-timerSteps">timerSteps</td>
+                                <td>La précision du timer.<br>Ex.<br> Si elle est de 1, le timer fera "5; 4; 3, ...", <br>Si elle est de 0.1, le timer fera "5.0; 4.9; 4.8; ..."</td>
+                            </tr>
+                            <tr>
+                                <td id="cps-option-resultArrounds">resultArrounds</td>
+                                <td>La précision du resultat.<br>Ex.<br>Si cette option est égal à 0.1, le résultat sera (par exemple): "4.6"</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
                     <hr>
-                    <h5 id="cps-option-defaultTimerValue">defaultTimerValue</h5>
-                    <p>Cette valeur est la valeur par défaut du timer. A noter qu'elle doit être comprise entre la valeur minimal et maximal du timer !</p>
-                    <h5 id="cps-option-minTimerValue">minTimerValue</h5>
-                    <p>La valeur minimal que le timer peut avoir</p>
-                    <h5 id="cps-option-maxTimerValue">maxTimerValue</h5>
-                    <p>La valeur maximal que le timer peut avoir</p>
-                    <h5 id="cps-cps-option-timerSteps">TimerSteps</h5>
-                    <p>La précision du timer.</p>
-                    <p>Ex: <br>Si elle est de 1, le timer fera "5; 4; 3, ...", <br>Si elle est de 0.1, le timer fera "5.0; 4.9; 4.8; ..."</p>
-                    <h5 id="cps-option-resultArrounds">resultArrounds</h5>
-                    <p>La précision du résultat.</p>
-                    <p>Ex: <br>Si cette option est égal à 0.1, le résultat sera (par exemple): "4.6"</p>
-                    <hr>
+
                     <h4>Tips !</h4>
                     <p><code>&lt;body&gt;</code> prendra la classe "cps-started" si le timer a commencé, et "cps-ended" si le timer est terminé !</p>
                     <p>A noter que si le jeu n'a pas commencé, <code>&lt;body&gt;</code> n'aura aucune classe.</p>
@@ -173,6 +238,7 @@
 <button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
 <p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
 <p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
+<input type="number" max="25" min="3" class="timer" placeholder="Entrez le temps ici !"> <!-- L'utilisateur peut modifier le temps du jeu -->
 </pre>
                 <h4>Ce que CPSer vous renvoie:</h4>
                 <h6 style="margin: 5pt 0;">(un style a été appliqué)</h6>
@@ -182,10 +248,11 @@
                     <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
                     <!-- ATTENTION: pour l'exemple la balise <meta> se trouve dans le body, mais celle si doit se trouver obligatoirement dans le <head> du document !! -->
 
-                    <button class="starter clicker clicks" style="margin: 0 0 5pt 0;">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
+                    <button class="starter clicker clicks">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
                     <button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
                     <p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
                     <p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
+                    <input type="number" max="25" min="3" class="timer" placeholder="Entrez le temps ici !"> <!-- L'utilisateur peut modifier le temps du jeu -->
                 </div>
             </div>
         </section>
@@ -279,7 +346,76 @@
             </div>
             <div id="htmlformat:exemples" class="ex">
                 <h3>Exemples</h3>
-                <h4>[EN PREPARATION]</h4>
+                <h4>Sans htmlFormat:</h4>
+<div class="unformated">
+<div class="div">
+    <h1 id="un-titre">Ceci est un titre</h1>
+</div>
+<ul>
+    <li>Oh !</li>
+    <li>Une liste à puce !</li>
+</ul>
+<ol style="color: blue;">
+    <li>Hmmm</li>
+    <li>C'est fort amusant !</li>
+</ol>
+<table>
+<thead>
+    <tr>
+        <th colspan="2">Un joli petit tableau</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Un titre</td>
+        <td>Une description</td>
+    </tr>
+    <tr>
+        <td>Un autre titre</td>
+        <td>Une autre description</td>
+    </tr>
+    <tr>
+        <td>Encore un titre</td>
+        <td>Encore une description</td>
+    </tr>
+</tbody>
+</table>
+</div>
+                <h4>Avec htmlFormat:</h4>
+<pre class="format">
+<div class="div">
+    <h1 id="un-titre">Ceci est un titre</h1>
+</div>
+<ul>
+    <li>Oh !</li>
+    <li>Une liste à puce !</li>
+</ul>
+<ol style="color: blue;">
+    <li>Hmmm</li>
+    <li>C'est fort amusant !</li>
+</ol>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2">Un joli petit tableau</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Un titre</td>
+            <td>Une description</td>
+        </tr>
+        <tr>
+            <td>Un autre titre</td>
+            <td>Une autre description</td>
+        </tr>
+        <tr>
+            <td>Encore un titre</td>
+            <td>Encore une description</td>
+        </tr>
+    </tbody>
+</table>
+</pre>
             </div>
         </section>
         <section id="me">
@@ -300,7 +436,7 @@
 
     </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="/htmlFormat/htmlFormat.js"></script>
+    <script src="https://flylibs.netlify.app/htmlFormat/htmlFormat.js"></script>
     <script src="https://flylibs.netlify.app/CPSer/CPSer.js"></script>
     <script src="/main.js"></script>
 </body>

@@ -42,6 +42,10 @@ a:hover::before {
     width: 100%;
 }
 
+p, table tbody td:nth-child(2) {
+    line-height: 15pt;
+}
+
 pre {
     margin: 15pt 0;
     padding: 5pt;
@@ -153,8 +157,8 @@ nav h1 {
     left: 0;
     top: 100%;
 
-    background-color: rgba(0,0,0,.05);
-    box-shadow: 0 0 5pt rgba(255,255,255,.05);
+    background-color: var(--semiDarkColor);
+    box-shadow: 0 0 5pt var(--semiDarkColor);
     
     border-radius: 5pt;
 
@@ -235,9 +239,16 @@ main table {
     
     border-collapse: collapse;
 }
-main thead {
+main table thead {
     background-color: var(--darkColor);
     color: var(--lightColor);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+main table thead tr>th:nth-child(2) {
+    border:0 solid var(--semiDarkColor);
+    border-left-width: 2.5pt;
 }
 
 main table tbody tr {
@@ -246,7 +257,7 @@ main table tbody tr {
 main table tbody tr {
     border-width: 1.5pt 0;
 }
-main table tr>td:nth-child(1) {
+main table tbody tr>*:nth-child(1) {
     border: inherit;
     border-right-width: 2.5pt;
     border-right-style: solid;
@@ -254,7 +265,7 @@ main table tr>td:nth-child(1) {
     -webkit-user-select: all;
     user-select: all;
 }
-main table tr:nth-child(even) {
+main table tbody tr:nth-child(even) {
     background-color: var(--semiDarkColor);
 }
 main table tr>* {
@@ -337,6 +348,17 @@ section ol li {
 }
 .presentation li>* {
     margin: 5pt 0;
+}
+
+/* htmlFormat */
+
+.unformated {
+    padding: 0 5pt;
+    margin: 10pt 0;
+    border: 0 solid var(--darkColor);
+    border-left-width: 5pt;
+
+    border-radius: 5pt;
 }
 
 /* me section */
