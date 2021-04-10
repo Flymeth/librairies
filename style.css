@@ -46,6 +46,20 @@ p, table tbody td:nth-child(2) {
     line-height: 15pt;
 }
 
+hr {
+    margin: 25pt auto;
+    border: none;
+    height: 5pt;
+
+    background-color: var(--lightColor);
+
+    border-radius: 5pt;
+
+    width: 50%;
+
+    box-shadow: .5pt .5pt 2.5pt var(--lightColor);
+}
+
 pre {
     margin: 15pt 0;
     padding: 5pt;
@@ -207,6 +221,9 @@ nav h1 {
 main {
     padding: 0 15pt;
 }
+.mobile main {
+    padding: 0 5pt;
+}
 main a {
     padding: 3pt;
     color: var(--semiDarkColor);
@@ -232,12 +249,18 @@ main a:hover::before {
 main table {
     text-align: center;
     color: var(--darkColor);
-    margin: 15pt 0;
+    margin: 15pt auto;
     border: 1.5pt solid var(--darkColor);
     
     background-color: var(--lightColor);
     
     border-collapse: collapse;
+    max-width: 75%;
+}
+.mobile main table {
+    max-width: 100%;
+
+    font-size: 75%;
 }
 main table thead {
     background-color: var(--darkColor);
