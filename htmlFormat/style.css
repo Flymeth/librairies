@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+
+:root {
+    --darkColor: #262626;
+    --semiDarkColor: #70798C;
+    --lightColor: #E4DFDA;
+}
+html {
+    scroll-behavior: smooth;
+}
+*,::before,::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-image: linear-gradient(to bottom right, var(--darkColor), var(--semiDarkColor));
+    color: var(--lightColor);
+}
+
+a {
+    position: relative;
+    text-decoration: none;
+    color: var(--lightColor);
+}
+a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -.5pt;
+    height: 1.5pt;
+    width: 15%;
+
+    background-color: var(--lightColor);
+
+    border-radius: 50pt;
+
+    transition: width .25s;
+}
+a:hover::before {
+    width: 100%;
+}
+
+p, table tbody td:nth-child(2) {
+    line-height: 15pt;
+}
+
+pre {
+    margin: 15pt 0;
+    padding: 5pt;
+    border-radius: 5pt;
+    background-color: var(--darkColor);
+    transition: transform .15s;
+
+    overflow-x: scroll;
+}
+pre:active {
+    transform: scale(1.025);
+}
+pre::-webkit-scrollbar {
+    background-color: transparent;
+    height: 5pt;
+    width: 2.5pt;
+}
+pre::-webkit-scrollbar-corner {
+    display: none;
+}
+pre::-webkit-scrollbar-thumb {
+    background-image: linear-gradient(to right, transparent 5%, var(--lightColor) 45% 55%, transparent 100% 5%);
+    border-radius: 50pt;
+}
+
+code {
+    padding: 2.5pt;
+    text-align: center;
+    user-select: all;
+    border-radius: 5pt;
+    box-shadow: inset 0 0 5pt var(--darkColor);
+}
+
+pre, code {
+    font-family: monospace;
+}
+
+.allSelect {
+    user-select: all;
+}
+
+header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    overflow: hidden;
+    color: var(--darkColor);
+}
+
+nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    min-height: 5vh;
+
+    z-index: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10pt 15pt;
+
+    backdrop-filter: blur(2.5pt);
+    -webkit-backdrop-filter: blur(2.5pt);
+
+    user-select: none;
+    -webkit-user-select: none;
+
+    box-shadow: 0 0 5pt var(--darkColor);
+
+    transition: top .5s;
+}
+nav.hide:not(:hover) {
+    top: -10%;
+}
+nav h1 {
+    color: var(--semiDarkColor);
+    font-size: 25pt;
+}
+
+/* Navs */
+
+.menu {
+    display: flex;
+}
+
+.menu * {
+    list-style: none;
+}
+
+.menu>li {
+    position: relative;
+    margin: 0 15pt;
+    padding: 5pt;
+    cursor: pointer;
+}
+.mobile .menu>li {
+    cursor: initial;
+}
+.menu-content {
+    max-height: 0;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 100%;
+
+    background-color: var(--semiDarkColor);
+    box-shadow: 0 0 5pt var(--semiDarkColor);
+    
+    border-radius: 5pt;
+
+    text-align: left;
+    
+    transition: max-height .5s .5s, padding .5s .5s;
+}
+.menu>li:hover>.menu-content {
+    max-height: 13em;
+    padding: 0 5pt;
+    transition: max-height .25s, padding .5s;
+}
+.menu-content>li {
+    margin: 5pt 0;
+    position: relative;
+
+    transition: color .5s 0s;
+}
+
+.menu-inner {
+    max-height: 0;
+    overflow: hidden;
+
+    transition: max-height .5s 0s;
+}
+
+.menu-content li:hover {
+    color: var(--lightColor);
+}
+.menu-content li:hover>.menu-inner {
+    max-height: 5em;
+}
+.menu-inner>li {
+    margin: 5pt 0;
+}
+
+/* header */
+
+.title {
+    font-size: 25pt;
+    text-shadow: 1.5pt 1.5pt 2.5pt var(--lightColor), -1.5pt -1.5pt 2.5pt var(--semiDarkColor);
+}
+
+/* main */
+
+main {
+    padding: 0 15pt;
+}
+main a {
+    padding: 3pt;
+    color: var(--semiDarkColor);
+    text-decoration: underline;
+    transition: color .5s;
+}
+main a:hover {
+    color: var(--lightColor);
+}
+main a::before {
+    height: 100%;
+    border-radius: 0;
+    z-index: -1;
+    background-color: var(--semiDarkColor);
+    width: 0;
+    transition: .5s;
+}
+main a:hover::before {
+    width: 100%;
+    border-radius: 2.5pt;
+}
+
+main table {
+    text-align: center;
+    color: var(--darkColor);
+    margin: 15pt 0;
+    border: 1.5pt solid var(--darkColor);
+    
+    background-color: var(--lightColor);
+    
+    border-collapse: collapse;
+}
+main table thead {
+    background-color: var(--darkColor);
+    color: var(--lightColor);
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+main table thead tr>th:nth-child(2) {
+    border:0 solid var(--semiDarkColor);
+    border-left-width: 2.5pt;
+}
+
+main table tbody tr {
+    border: 0 dashed var(--darkColor);
+}
+main table tbody tr {
+    border-width: 1.5pt 0;
+}
+main table tbody tr>*:nth-child(1) {
+    border: inherit;
+    border-right-width: 2.5pt;
+    border-right-style: solid;
+    -moz-user-select: all;
+    -webkit-user-select: all;
+    user-select: all;
+}
+main table tbody tr:nth-child(even) {
+    background-color: var(--semiDarkColor);
+}
+main table tr>* {
+    width: 50%;
+    padding: 15pt;
+
+}
+
+section {
+    min-height: 100vh;
+}
+
+section>* {
+    margin: 5pt 0;
+}
+
+section>h2 {
+    margin-bottom: 15pt;
+    position: relative;
+    display: inline-block;
+}
+section>h2::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50%;
+    height: 2.5pt;
+    border-radius: 50pt;
+    background-image: linear-gradient(to right, var(--lightColor), transparent);
+}
+
+section>div {
+    padding: 5pt;
+}
+
+section p {
+    margin: 7.5pt 0;
+}
+
+section h3 {
+    margin: 15pt 0;
+    text-transform: uppercase;
+}
+section h3::before {
+    content: "# ";
+}
+
+section h4 {
+    margin: 15pt 0 10pt 0;
+}
+
+section h5 {
+    margin: 15pt 10pt;
+    text-decoration: underline;
+}
+section h5::before {
+    content: "## ";
+}
+
+section ol, ul {
+    list-style-position: inside;
+}
+
+section ul li {
+    margin: 2.5pt 0;
+}
+
+section ol li {
+    margin: 5pt 15pt;
+}
+
+/* 1e section */
+
+.presentation>ol {
+    margin: 15pt 10pt;
+}
+.presentation li {
+    margin: 15pt 0;
+}
+.presentation li>* {
+    margin: 5pt 0;
+}
+
+/* htmlFormat */
+
+.unformated {
+    padding: 0 5pt;
+    margin: 10pt 0;
+    border: 0 solid var(--darkColor);
+    border-left-width: 5pt;
+
+    border-radius: 5pt;
+}
+
+/* me section */
+
+#me a {
+    color: var(--darkColor);
+}
+#me a:hover {
+    color: var(--lightColor);
+}
+#me a::before {
+    background-color: var(--darkColor);
+}
+
+#me img {
+    float: left;
+    width: 200pt;
+    border-radius: 50%;
+    shape-outside: circle();
+}
+
+#me p {
+    margin: 10pt 0;
+}
+
+/* medias */
+
+@media screen and (max-width: 375px) {
+    .menu>li {
+        margin: 0 5pt;
+    }
+}
+
+@media screen and (max-width: 315px) {
+    .menu>li {
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 752px) {
+    #me img {
+        float: none;
+        width: 50%;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
