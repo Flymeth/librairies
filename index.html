@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyLibs</title>
-    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; balises=#D1D1D1; propsIncludesEgals=false">
+    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false">
 
     <link rel="stylesheet" href="/style.css">
 </head>
@@ -95,9 +95,11 @@
                     <p>Le comportement du jeu peut aussi être modifié !</p>
                     <p>Pour cela, ajoutez une balise <code>&lt;meta></code> dans le <code>&lt;head></code> de votre page.</p>
                     <p>Puis, configurez la comme ceci:</p>
-<pre class="format">
-<meta name="cpserOptions" content="PROPS1=VALUE, PROPS2=VALUE">
-</pre>
+
+                    <pre class="format">
+                        <meta name="cpserOptions" content="PROPS1=VALUE, PROPS2=VALUE">
+                    </pre>
+
                     <p>Voici la liste des options que vous pouvez mettre:</p>
                     <ul>
                         <li><a href="#cps-option-defaultTimerValue">defaultTimerValue</a></li>
@@ -211,35 +213,35 @@
                 <h3>Exemples</h3>
                 <div>
                     <h4>Exemple #1</h4>
-<pre class="format">
-<button class="starter clicker">Clickez ici !</button>
-<button class="restarter">Recommencer ?</button>
+                    <pre class="format">
+                        <button class="starter clicker">Clickez ici !</button>
+                        <button class="restarter">Recommencer ?</button>
 
-<input type="number" placeholder="Changer le timer ?">
+                        <input type="number" placeholder="Changer le timer ?">
 
-<p>Clicks: <span class="clicks"></span>, Timer: <span class="clock"></span>, Résultat: <span class="result"></span>cps</p>
-</pre>
+                        <p>Clicks: <span class="clicks"></span>, Timer: <span class="clock"></span>, Résultat: <span class="result"></span>cps</p>
+                    </pre>
                     <h4>Exemple #2</h4>
-<pre class="format">
-<button class="starter clicker clicks">Click here !</button>
-<button class="restarter clock result">Restart ?</button>
-<!-- ici le timer ne peut pas être changé -->
-</pre>
+                    <pre class="format">
+                        <button class="starter clicker clicks">Click here !</button>
+                        <button class="restarter clock result">Restart ?</button>
+                        <!-- ici le timer ne peut pas être changé -->
+                    </pre>
                 </div>
                 <h3>Exemple concret</h3>
                 <h4>Ce que vous écrivez:</h4>
-<pre class="format">
-<!-- Le code que vous pourriez mettre -->
+                <pre class="format">
+                    <!-- Le code que vous pourriez mettre -->
 
-<meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
-<!-- ATTENTION: pour l'exemple la balise <meta> se trouve dans le body, mais celle si doit se trouver obligatoirement dans le <head> du document !! -->
+                    <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
+                    <!-- ATTENTION: pour l'exemple la balise <meta> se trouve dans le body, mais celle si doit se trouver obligatoirement dans le <head> du document !! -->
 
-<button class="starter clicker clicks">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
-<button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
-<p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
-<p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
-<input type="number" max="25" min="3" class="timer" placeholder="Entrez le temps ici !"> <!-- L'utilisateur peut modifier le temps du jeu -->
-</pre>
+                    <button class="starter clicker clicks">Click here !</button> <!-- Ce bouton sert à commencer le jeu, clicker et afficher le nombre de click de l'utilisateur -->
+                    <button class="restarter">restart ?</button> <!-- Si vous souhaitez recommencer, clickez ici ! -->
+                    <p>You have <span class="result"></span>cps !</p> <!-- Le résultat du test -->
+                    <p>Time remaining: <span class="clock"></span>s</p> <!-- Le temps restant -->
+                    <input type="number" max="25" min="3" class="timer" placeholder="Entrez le temps ici !"> <!-- L'utilisateur peut modifier le temps du jeu -->
+                </pre>
                 <h4>Ce que CPSer vous renvoie:</h4>
                 <h6 style="margin: 5pt 0;">(un style a été appliqué)</h6>
                 <div class="cps-result" style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; background-color: whitesmoke; padding: 15pt; border-radius: 5pt; color: black">
@@ -274,25 +276,25 @@
                 <hr>
                 <h5 id="useIt">Bien utiliser la librairie</h5>
                 <p>Pour bien comprendre ce que va regarder et formatter la librairie, voici un code vous l'expliquant:</p>
-<pre class="format">
-<div class="une-div">
-    <h1>Un titre</h1>
-    <p>Un paragraphe</p>
-</div>
-<!-- cette div n'est pas formatté car elle ne possède pas la classe "format" -->
+                <pre class="format">
+                    <div class="une-div">
+                        <h1>Un titre</h1>
+                        <p>Un paragraphe</p>
+                    </div>
+                    <!-- cette div n'est pas formatté car elle ne possède pas la classe "format" -->
 
-<div class="format">
-    <h1>Un titre</h1>
-    <p>Un paragraphe</p>
-</div>
-<!-- En revanche, celle-ci sera formatté, étant donné qu'elle possède bien la classe "format" -->
-</pre>
+                    <div class="format">
+                        <h1>Un titre</h1>
+                        <p>Un paragraphe</p>
+                    </div>
+                    <!-- En revanche, celle-ci sera formatté, étant donné qu'elle possède bien la classe "format" -->
+                </pre>
                 <p>TIP: utilisez les balises <code>&lt;pre></code> pour mettre votre code à l'interrieur, sinon les indetations et les sauts de lignes ne seront pas prix en compte !</p>
                 <h5 id="useYourColors">Utiliser vos couleurs</h5>
                 <p>Pour paramétrer vos propres couleurs, vous devez inclure dans le <code>&lt;head></code> de votre document une balise <code>&lt;meta></code> de la façons suivante:</p>
-<pre class="format">
-<meta name="htmlFormatOptions" content="PROP1=VALUE1; PROP2=VALUE2;...">
-</pre>
+                <pre class="format">
+                    <meta name="htmlFormatOptions" content="PROP1=VALUE1; PROP2=VALUE2;...">
+                </pre>
                 <p>Voici un tableau avec les propriétés que vous pouvez entrer ainsi que leur fonctions:</p>
                 <table>
                     <thead>
@@ -311,7 +313,7 @@
                             <td>les attributs des éléments (ex: class, href, id...).</td>
                         </tr>
                         <tr>
-                            <td>balises</td>
+                            <td>tags</td>
                             <td>les balises des éléments (ex: <, >, /)</td>
                         </tr>
                         <tr>
@@ -327,6 +329,11 @@
                             <td>tous les commentaires (ex: &lt;!-- ceci est un commentaire -->)</td>
                         </tr>
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <th colspan="2">Vous pouvez également cibler les éléments avec leur classes (par exemple: <code>.tags {color: blue}</code>) dans un fichier .css !</th>
+                        </tr>
+                    </tfoot>
                 </table>
                 <h5 id="moreOptions">Plus d'options</h5>
                 <table>
@@ -347,75 +354,75 @@
             <div id="htmlformat:exemples" class="ex">
                 <h3>Exemples</h3>
                 <h4>Sans htmlFormat:</h4>
-<div class="unformated">
-<div class="div">
-    <h1 id="un-titre">Ceci est un titre</h1>
-</div>
-<ul>
-    <li>Oh !</li>
-    <li>Une liste à puce !</li>
-</ul>
-<ol style="color: blue;">
-    <li>Hmmm</li>
-    <li>C'est fort amusant !</li>
-</ol>
-<table>
-<thead>
-    <tr>
-        <th colspan="2">Un joli petit tableau</th>
-    </tr>
-</thead>
-<tbody>
-    <tr>
-        <td>Un titre</td>
-        <td>Une description</td>
-    </tr>
-    <tr>
-        <td>Un autre titre</td>
-        <td>Une autre description</td>
-    </tr>
-    <tr>
-        <td>Encore un titre</td>
-        <td>Encore une description</td>
-    </tr>
-</tbody>
-</table>
-</div>
+                <div class="unformated">
+                    <div class="div">
+                        <h1 id="un-titre">Ceci est un titre</h1>
+                    </div>
+                    <ul>
+                        <li>Oh !</li>
+                        <li>Une liste à puce !</li>
+                    </ul>
+                    <ol style="color: blue;">
+                        <li>Hmmm</li>
+                        <li>C'est fort amusant !</li>
+                    </ol>
+                    <table>
+                    <thead>
+                        <tr>
+                            <th colspan="2">Un joli petit tableau</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Un titre</td>
+                            <td>Une description</td>
+                        </tr>
+                        <tr>
+                            <td>Un autre titre</td>
+                            <td>Une autre description</td>
+                        </tr>
+                        <tr>
+                            <td>Encore un titre</td>
+                            <td>Encore une description</td>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
                 <h4>Avec htmlFormat:</h4>
-<pre class="format">
-<div class="div">
-    <h1 id="un-titre">Ceci est un titre</h1>
-</div>
-<ul>
-    <li>Oh !</li>
-    <li>Une liste à puce !</li>
-</ul>
-<ol style="color: blue;">
-    <li>Hmmm</li>
-    <li>C'est fort amusant !</li>
-</ol>
-<table>
-    <thead>
-        <tr>
-            <th colspan="2">Un joli petit tableau</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Un titre</td>
-            <td>Une description</td>
-        </tr>
-        <tr>
-            <td>Un autre titre</td>
-            <td>Une autre description</td>
-        </tr>
-        <tr>
-            <td>Encore un titre</td>
-            <td>Encore une description</td>
-        </tr>
-    </tbody>
-</table>
-</pre>
+                <pre class="format">
+                    <div class="div">
+                        <h1 id="un-titre">Ceci est un titre</h1>
+                    </div>
+                    <ul>
+                        <li>Oh !</li>
+                        <li>Une liste à puce !</li>
+                    </ul>
+                    <ol style="color: blue;">
+                        <li>Hmmm</li>
+                        <li>C'est fort amusant !</li>
+                    </ol>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">Un joli petit tableau</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Un titre</td>
+                                <td>Une description</td>
+                            </tr>
+                            <tr>
+                                <td>Un autre titre</td>
+                                <td>Une autre description</td>
+                            </tr>
+                            <tr>
+                                <td>Encore un titre</td>
+                                <td>Encore une description</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </pre>
             </div>
         </section>
         <section id="me">

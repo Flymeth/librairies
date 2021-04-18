@@ -297,6 +297,18 @@ main table tr>* {
 
 }
 
+main table tfoot {
+    background-color: var(--darkColor);
+    color: var(--semiDarkColor);
+    line-height: 15pt;
+}
+main table tfoot code {
+    background-color: var(--lightColor);
+    box-shadow: none;
+    padding: 2.5pt;
+    margin: 0 .5pt;
+}
+
 section {
     min-height: 100vh;
 }
