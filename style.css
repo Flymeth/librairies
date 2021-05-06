@@ -66,6 +66,7 @@ pre {
     border-radius: 5pt;
     background-color: var(--darkColor);
     transition: transform .15s;
+    font-size: 0.75em;
 
     overflow-x: scroll;
 }
