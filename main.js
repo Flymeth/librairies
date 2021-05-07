@@ -58,7 +58,6 @@ let styles = [
     "css1",
     "vscode"
 ]
-console.log(style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText)
 let actualStyle = 0
 function setStyle(nb, newNb) {
     if(nb != null){
