@@ -49,3 +49,40 @@ function nav() {
     s=window.scrollY
 }
 nav()
+
+// style viewer
+let style = document.querySelector('.styleviewer')
+let nextBtn = document.querySelector('button.next')
+let previousBtn = document.querySelector('button.previous')
+let styles = [
+    "css1",
+    "vscode"
+]
+console.log(style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText)
+let actualStyle = 0
+function setStyle(nb, newNb) {
+    if(nb){
+        style.classList.replace(styles[nb], styles[newNb])
+        style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
+    }else {
+        style.classList.add(styles[newNb])
+        style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = styles[newNb]
+    }
+}
+setStyle(null, 0)
+function next() {
+    let nb = actualStyle
+    actualStyle++
+    if(actualStyle>styles.length-1) {
+        actualStyle=0
+    }
+    setStyle(nb,actualStyle)
+}
+function previous() {
+    let nb = actualStyle
+    actualStyle--
+    if(actualStyle<0) {
+        actualStyle=styles.length-1
+    }
+    setStyle(nb,actualStyle)
+}

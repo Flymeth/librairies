@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyLibs</title>
-    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false">
+    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false;showLineNumbers=true;lineNumbersWidth=20pt">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css">
@@ -273,6 +273,7 @@
                     <li><a href="#useIt">bien utiliser la librairie</a></li>
                     <li><a href="#useYourColors">Utiliser vos couleurs</a></li>
                     <li><a href="#moreOptions">Plus de paramètres</a></li>
+                    <li><a href="#customstyle">Paramètres précréé</a></li>
                 </ul>
                 <hr>
                 <h5 id="useIt">Bien utiliser la librairie</h5>
@@ -326,8 +327,20 @@
                             <td>les chaînes de caractères dans les balises (ex: class="ceci est une chaine de caractère")</td>
                         </tr>
                         <tr>
+                            <td>strings-txts</td>
+                            <td>le texte à l'intérieur de la chaine de caractère (tous ce qui est entre les guillets)</td>
+                        </tr>
+                        <tr>
+                            <td>strings-words</td>
+                            <td>tous les mots de la chaine de caractère</td>
+                        </tr>
+                        <tr>
                             <td>notes</td>
                             <td>tous les commentaires (ex: &lt;!-- ceci est un commentaire -->)</td>
+                        </tr>
+                        <tr>
+                            <td>notes-txts</td>
+                            <td>le message du commentaire (tout ce qui est entre "&lt;!--" et "-->")</td>
                         </tr>
                     </tbody>
                     <tfoot>
@@ -349,8 +362,25 @@
                             <td>propsIncludesEgals</td>
                             <td>[boolean] inclure oui ou non les "=" dans la couleurs des attributs des balises</td>
                         </tr>
+                        <tr>
+                            <td>showLineNumbers</td>
+                            <td>[boolean] afficher les numéros de ligne</td>
+                        </tr>
+                        <tr>
+                            <td>separationWidth</td>
+                            <td>(en px) La largeur entre les numéros de lignes et le code</td>
+                        </tr>
                     </tbody>
                 </table>
+                <h5 id="customstyle">Paramètres pré-créé</h5>
+                <p>En ajoutant le lien vers le fichier css ci-dessous, vous pouvez personnaliser plus simplement le style de vos code.</p>
+                <pre class="vscode format"><link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css"></pre>
+                <p>Voici un petit apperçu des styles applicable:</p>
+                <pre class="format styleviewer"><pre class="vscode format">Ceci est un texte</pre></pre>
+                <div class="btns">
+                    <button class="previous" onclick="previous()"><-</button>
+                    <button class="next" onclick="next()">-></button>
+                </div>
             </div>
             <div id="htmlformat:exemples" class="ex">
                 <h3>Exemples</h3>
@@ -440,9 +470,6 @@
             </div>
         </section>
     </main>
-    <footer>
-
-    </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://flylibs.netlify.app/htmlFormat/htmlFormat.js"></script>
     <script src="https://flylibs.netlify.app/CPSer/CPSer.js"></script>
