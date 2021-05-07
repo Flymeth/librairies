@@ -61,7 +61,7 @@ let styles = [
 console.log(style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText)
 let actualStyle = 0
 function setStyle(nb, newNb) {
-    if(nb){
+    if(nb != null){
         style.classList.replace(styles[nb], styles[newNb])
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
     }else {
