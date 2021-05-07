@@ -8,7 +8,7 @@
     <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false">
 
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customcss.css">
+    <link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css">
 </head>
 <body class="css1">
     <header>
@@ -72,7 +72,7 @@
                 <div>
                     <h4>Installation</h4>
                     <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code> </p>
-                    <pre class="format"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
+                    <pre class="vscode format"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
                     <h4>Utilisation</h4>
                     <p>La librairie va utiliser les différentes classes que vous attribuez à certain éléments pour savoir comment l'élément va oppérer.</p>
                     <p>Certaines classes ne peuvent être utilisé qu'une seule fois, tandis que pour d'autre, vous pouvez les mettres dans autant d'élément que vous le souhaitez.</p>
@@ -97,7 +97,7 @@
                     <p>Pour cela, ajoutez une balise <code>&lt;meta></code> dans le <code>&lt;head></code> de votre page.</p>
                     <p>Puis, configurez la comme ceci:</p>
 
-                    <pre class="format">
+                    <pre class="vscode format">
                         <meta name="cpserOptions" content="PROPS1=VALUE, PROPS2=VALUE">
                     </pre>
 
@@ -214,7 +214,7 @@
                 <h3>Exemples</h3>
                 <div>
                     <h4>Exemple #1</h4>
-                    <pre class="format">
+                    <pre class="vscode format">
                         <button class="starter clicker">Clickez ici !</button>
                         <button class="restarter">Recommencer ?</button>
 
@@ -223,7 +223,7 @@
                         <p>Clicks: <span class="clicks"></span>, Timer: <span class="clock"></span>, Résultat: <span class="result"></span>cps</p>
                     </pre>
                     <h4>Exemple #2</h4>
-                    <pre class="format">
+                    <pre class="vscode format">
                         <button class="starter clicker clicks">Click here !</button>
                         <button class="restarter clock result">Restart ?</button>
                         <!-- ici le timer ne peut pas être changé -->
@@ -231,7 +231,7 @@
                 </div>
                 <h3>Exemple concret</h3>
                 <h4>Ce que vous écrivez:</h4>
-                <pre class="format">
+                <pre class="vscode format">
                     <!-- Le code que vous pourriez mettre -->
 
                     <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
@@ -265,7 +265,7 @@
                 <h3>Documentation</h3>
                 <h4>Installation</h4>
                 <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code></p>
-                <pre class="format"><script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script></pre>
+                <pre class="vscode format"><script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script></pre>
                 <h4>Utilisation</h4>
                 <p>Cette librairie va simplement regarder les éléments avec la classe <code>format</code> et va mettre en forme le contenue de celles-ci.</p>
                 <p>Vous pouvez aussi choisir vos propres couleurs de mise en forme !</p>
@@ -277,14 +277,14 @@
                 <hr>
                 <h5 id="useIt">Bien utiliser la librairie</h5>
                 <p>Pour bien comprendre ce que va regarder et formatter la librairie, voici un code vous l'expliquant:</p>
-                <pre class="format">
+                <pre class="vscode format">
                     <div class="une-div">
                         <h1>Un titre</h1>
                         <p>Un paragraphe</p>
                     </div>
                     <!-- cette div n'est pas formatté car elle ne possède pas la classe "format" -->
 
-                    <div class="format">
+                    <div class="vscode format">
                         <h1>Un titre</h1>
                         <p>Un paragraphe</p>
                     </div>
@@ -293,7 +293,7 @@
                 <p>TIP: utilisez les balises <code>&lt;pre></code> pour mettre votre code à l'interrieur, sinon les indetations et les sauts de lignes ne seront pas prix en compte !</p>
                 <h5 id="useYourColors">Utiliser vos couleurs</h5>
                 <p>Pour paramétrer vos propres couleurs, vous devez inclure dans le <code>&lt;head></code> de votre document une balise <code>&lt;meta></code> de la façons suivante:</p>
-                <pre class="format">
+                <pre class="vscode format">
                     <meta name="htmlFormatOptions" content="PROP1=VALUE1; PROP2=VALUE2;...">
                 </pre>
                 <p>Voici un tableau avec les propriétés que vous pouvez entrer ainsi que leur fonctions:</p>
@@ -363,7 +363,7 @@
                         <li>Oh !</li>
                         <li>Une liste à puce !</li>
                     </ul>
-                    <ol style="color: blue;">
+                    <ol style="color: blue;" class="couleur blue">
                         <li>Hmmm</li>
                         <li>C'est fort amusant !</li>
                     </ol>
@@ -390,7 +390,7 @@
                     </table>
                 </div>
                 <h4>Avec htmlFormat:</h4>
-                <pre class="format">
+                <pre class="vscode format">
                     <div class="div">
                         <h1 id="un-titre">Ceci est un titre</h1>
                     </div>
@@ -398,7 +398,7 @@
                         <li>Oh !</li>
                         <li>Une liste à puce !</li>
                     </ul>
-                    <ol style="color: blue;">
+                    <ol style="color: blue;" class="couleur blue">
                         <li>Hmmm</li>
                         <li>C'est fort amusant !</li>
                     </ol>
