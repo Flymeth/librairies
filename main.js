@@ -55,15 +55,16 @@ let style = document.querySelector('.styleviewer')
 let nextBtn = document.querySelector('button.next')
 let previousBtn = document.querySelector('button.previous')
 let styles = [
-    "css1",
-    "vscode"
+    "vscode",
+    "css1"
 ]
 let actualStyle = 0
 function setStyle(nb, newNb) {
     if(nb != null){
-        style.classList.replace(styles[nb], styles[newNb])
+        document.querySelectorAll('pre').forEach(p=>p.classList.replace(styles[NB],styles[newNb]))
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
     }else {
+        document.querySelectorAll('pre').forEach(p=>p.classList.add(styles[newNb]))
         style.classList.add(styles[newNb])
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = styles[newNb]
     }
