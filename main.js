@@ -61,11 +61,10 @@ let styles = [
 let actualStyle = 0
 function setStyle(nb, newNb) {
     if(nb != null){
-        document.querySelectorAll('pre').forEach(p=>p.classList.replace(styles[NB],styles[newNb]))
+        document.querySelectorAll('pre').forEach(p=>p.classList.replace(styles[Nb],styles[newNb]))
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
     }else {
         document.querySelectorAll('pre').forEach(p=>p.classList.add(styles[newNb]))
-        style.classList.add(styles[newNb])
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = styles[newNb]
     }
 }
