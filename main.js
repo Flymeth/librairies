@@ -59,9 +59,8 @@ let styles = [
     "sublime",
     "css1"
 ]
-let actualStyle = document.cookie.toString().split(';')[0].split('=')[1]
+let actualStyle = parseInt(document.cookie.toString().split(';')[0].split('=')[1])
 function setStyle(nb, newNb) {
-    console.log(styles[newNb]);
     if(nb != null){
         document.querySelectorAll('pre:not(.const)').forEach(p=>p.classList.replace(styles[nb],styles[newNb]))
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
