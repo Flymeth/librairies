@@ -70,13 +70,11 @@ function setStyle(nb, newNb) {
     }
     document.cookie = `code_style=${newNb}`
 }
-window.onload = function () {
-    if(!actualStyle) {
-        setStyle(null, 0)
-    }else {
-        setStyle(null, actualStyle)
-    }
-}    
+if(!actualStyle) {
+    setStyle(null, 0)
+}else {
+    setStyle(null, actualStyle)
+}
 function next() {
     let nb = actualStyle
     actualStyle++
