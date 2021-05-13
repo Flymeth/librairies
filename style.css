@@ -469,7 +469,10 @@ section ol li {
 
 @media screen and (max-width: 415px) {
     table {
-        font-size: 0.8em;
+        font-size: 0.6em;
+    }
+    table td, table th {
+        padding: 2.5pt !important;
     }
 }
 
