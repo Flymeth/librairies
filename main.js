@@ -43,7 +43,7 @@ function nav() {
     }
     if(s<window.scrollY) {
         nav.classList.add('hide')
-    }else {
+    }else if(s>window.scrollY+10) {
         nav.classList.remove('hide')
     }
     s=window.scrollY
@@ -56,19 +56,28 @@ let nextBtn = document.querySelector('button.next')
 let previousBtn = document.querySelector('button.previous')
 let styles = [
     "vscode",
+    "sublime",
     "css1"
 ]
-let actualStyle = 0
+let actualStyle = document.cookie.toString().split(';')[0].split('=')[1]
 function setStyle(nb, newNb) {
+    console.log(styles[newNb]);
     if(nb != null){
-        document.querySelectorAll('pre').forEach(p=>p.classList.replace(styles[nb],styles[newNb]))
+        document.querySelectorAll('pre:not(.const)').forEach(p=>p.classList.replace(styles[nb],styles[newNb]))
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText.replace(styles[nb], styles[newNb])
     }else {
-        document.querySelectorAll('pre').forEach(p=>p.classList.add(styles[newNb]))
+        document.querySelectorAll('pre:not(.const)').forEach(p=>p.classList.add(styles[newNb]))
         style.firstChild.lastChild.firstChild.childNodes[4].childNodes[1].firstChild.innerText = styles[newNb]
     }
+    document.cookie = `code_style=${newNb}`
 }
-setStyle(null, 0)
+window.onload = function () {
+    if(!actualStyle) {
+        setStyle(null, 0)
+    }else {
+        setStyle(null, actualStyle)
+    }
+}    
 function next() {
     let nb = actualStyle
     actualStyle++

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FlyLibs</title>
-    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false;showLineNumbers=true;lineNumbersWidth=20pt">
+    <meta name="htmlFormatOptions" content="texts=#fff; strings=#FF5959; props=#018600; elements=#655BFF; tags=#D1D1D1; propsIncludesEgals=false;showLineNumbers=true;lineNumbersWidth=20pt; fixLineNumbers=true">
 
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css">
@@ -72,7 +72,7 @@
                 <div>
                     <h4>Installation</h4>
                     <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code> </p>
-                    <pre class="vscode format"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
+                    <pre class="format"><script src="https://flylibs.netlify.app/cpser/cpser.js"></script></pre>
                     <h4>Utilisation</h4>
                     <p>La librairie va utiliser les différentes classes que vous attribuez à certain éléments pour savoir comment l'élément va oppérer.</p>
                     <p>Certaines classes ne peuvent être utilisé qu'une seule fois, tandis que pour d'autre, vous pouvez les mettres dans autant d'élément que vous le souhaitez.</p>
@@ -97,7 +97,7 @@
                     <p>Pour cela, ajoutez une balise <code>&lt;meta></code> dans le <code>&lt;head></code> de votre page.</p>
                     <p>Puis, configurez la comme ceci:</p>
 
-                    <pre class="vscode format">
+                    <pre class="format">
                         <meta name="cpserOptions" content="PROPS1=VALUE, PROPS2=VALUE">
                     </pre>
 
@@ -214,7 +214,7 @@
                 <h3>Exemples</h3>
                 <div>
                     <h4>Exemple #1</h4>
-                    <pre class="vscode format">
+                    <pre class="format">
                         <button class="starter clicker">Clickez ici !</button>
                         <button class="restarter">Recommencer ?</button>
 
@@ -223,7 +223,7 @@
                         <p>Clicks: <span class="clicks"></span>, Timer: <span class="clock"></span>, Résultat: <span class="result"></span>cps</p>
                     </pre>
                     <h4>Exemple #2</h4>
-                    <pre class="vscode format">
+                    <pre class="format">
                         <button class="starter clicker clicks">Click here !</button>
                         <button class="restarter clock result">Restart ?</button>
                         <!-- ici le timer ne peut pas être changé -->
@@ -231,7 +231,7 @@
                 </div>
                 <h3>Exemple concret</h3>
                 <h4>Ce que vous écrivez:</h4>
-                <pre class="vscode format">
+                <pre class="format">
                     <!-- Le code que vous pourriez mettre -->
 
                     <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
@@ -245,7 +245,7 @@
                 </pre>
                 <h4>Ce que CPSer vous renvoie:</h4>
                 <h6 style="margin: 5pt 0;">(un style a été appliqué)</h6>
-                <div class="cps-result" style="display: flex; align-items: center; justify-content: space-evenly; flex-direction: column; background-color: whitesmoke; padding: 15pt; border-radius: 5pt; color: black">
+                <div class="cps-result">
                     <!-- Le code que vous pourriez mettre -->
 
                     <meta name="cpserOptions" content="timerSteps=0.1, defaultTimerValue=15"> <!-- Ici est paramétré les options de cpser -->
@@ -265,7 +265,7 @@
                 <h3>Documentation</h3>
                 <h4>Installation</h4>
                 <p>Copiez-collez le code ci-dessous au dessus de la balise <code class="allSelect">&lt;/body&gt;</code></p>
-                <pre class="vscode format"><script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script></pre>
+                <pre class="format"><script src="https://flylibs.netlify.app/htmlformat/htmlformat.js"></script></pre>
                 <h4>Utilisation</h4>
                 <p>Cette librairie va simplement regarder les éléments avec la classe <code>format</code> et va mettre en forme le contenue de celles-ci.</p>
                 <p>Vous pouvez aussi choisir vos propres couleurs de mise en forme !</p>
@@ -278,14 +278,14 @@
                 <hr>
                 <h5 id="useIt">Bien utiliser la librairie</h5>
                 <p>Pour bien comprendre ce que va regarder et formatter la librairie, voici un code vous l'expliquant:</p>
-                <pre class="vscode format">
+                <pre class="format">
                     <div class="une-div">
                         <h1>Un titre</h1>
                         <p>Un paragraphe</p>
                     </div>
                     <!-- cette div n'est pas formatté car elle ne possède pas la classe "format" -->
 
-                    <div class="vscode format">
+                    <div class="format">
                         <h1>Un titre</h1>
                         <p>Un paragraphe</p>
                     </div>
@@ -294,7 +294,7 @@
                 <p>TIP: utilisez les balises <code>&lt;pre></code> pour mettre votre code à l'interrieur, sinon les indetations et les sauts de lignes ne seront pas prix en compte !</p>
                 <h5 id="useYourColors">Utiliser vos couleurs</h5>
                 <p>Pour paramétrer vos propres couleurs, vous devez inclure dans le <code>&lt;head></code> de votre document une balise <code>&lt;meta></code> de la façons suivante:</p>
-                <pre class="vscode format">
+                <pre class="format">
                     <meta name="htmlFormatOptions" content="PROP1=VALUE1; PROP2=VALUE2;...">
                 </pre>
                 <p>Voici un tableau avec les propriétés que vous pouvez entrer ainsi que leur fonctions:</p>
@@ -303,49 +303,64 @@
                         <tr>
                             <th>propriétés</th>
                             <th>descriptions</th>
+                            <th>initial</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>elements</td>
                             <td>le nom des élémets des balises (ex: section, div, h1...)</td>
+                            <td>darkblue</td>
                         </tr>
                         <tr>
                             <td>props</td>
                             <td>les attributs des éléments (ex: class, href, id...).</td>
+                            <td>blue</td>
                         </tr>
                         <tr>
                             <td>tags</td>
-                            <td>les balises des éléments (ex: <, >, /)</td>
+                            <td>les balises des éléments (ex: <, >, / ou encore =)</td>
+                            <td>gray</td>
+                        </tr>
+                        <tr>
+                            <td>egals</td>
+                            <td>(uniquement si l'option "propsIncludesEgals" est réglé sur "false") Tous les "=" entre les noms des attributs et leurs valeurs</td>
+                            <td>inherit</td>
                         </tr>
                         <tr>
                             <td>texts</td>
                             <td>les textes en dehors des balises</td>
+                            <td>black</td>
                         </tr>
                         <tr>
                             <td>strings</td>
                             <td>les chaînes de caractères dans les balises (ex: class="ceci est une chaine de caractère")</td>
+                            <td>darkgoldenrod</td>
                         </tr>
                         <tr>
                             <td>strings-txts</td>
                             <td>le texte à l'intérieur de la chaine de caractère (tous ce qui est entre les guillets)</td>
+                            <td>inherit</td>
                         </tr>
                         <tr>
                             <td>strings-words</td>
                             <td>tous les mots de la chaine de caractère</td>
+                            <td>inherit</td>
                         </tr>
                         <tr>
                             <td>notes</td>
                             <td>tous les commentaires (ex: &lt;!-- ceci est un commentaire -->)</td>
+                            <td>lightskyblue</td>
                         </tr>
                         <tr>
                             <td>notes-txts</td>
                             <td>le message du commentaire (tout ce qui est entre "&lt;!--" et "-->")</td>
+                            <td>inherit</td>
                         </tr>
                     </tbody>
                     <tfoot>
                         <tr>
-                            <th colspan="2">Vous pouvez également cibler les éléments avec leur classes (par exemple: <code>.tags {color: blue}</code>) dans un fichier .css !</th>
+                            <th colspan="3">Vous pouvez également cibler les éléments avec leur classes (par exemple: <code>.tags {color: blue}</code>) dans un fichier .css !</th>
                         </tr>
                     </tfoot>
                 </table>
@@ -355,31 +370,85 @@
                         <tr>
                             <th>propriétés</th>
                             <th>descriptions</th>
+                            <th>initial</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <td>propsIncludesEgals</td>
                             <td>[boolean] inclure oui ou non les "=" dans la couleurs des attributs des balises</td>
+                            <td>false</td>
                         </tr>
                         <tr>
                             <td>showLineNumbers</td>
                             <td>[boolean] afficher les numéros de ligne</td>
+                            <td>false</td>
                         </tr>
                         <tr>
                             <td>separationWidth</td>
-                            <td>(en px) La largeur entre les numéros de lignes et le code</td>
+                            <td>La largeur entre les numéros de lignes et le code</td>
+                            <td>10px</td>
+                        </tr>
+                        <tr>
+                            <td>fixLineNumbers</td>
+                            <td>Inclure ou non les numéro de ligne dans lors du scroll du code</td>
+                            <td>false</td>
                         </tr>
                     </tbody>
                 </table>
                 <h5 id="customstyle">Paramètres pré-créé</h5>
                 <p>En ajoutant le lien vers le fichier css ci-dessous, vous pouvez personnaliser plus simplement le style de vos code.</p>
-                <pre class="vscode format"><link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css"></pre>
+                <pre class="format"><link rel="stylesheet" href="https://flylibs.netlify.app/htmlformat/customstyle.css"></pre>
                 <p>Voici un petit apperçu des styles applicable:</p>
-                <pre class="format styleviewer"><pre class="vscode format">Ceci est un texte</pre></pre>
+                <pre class="format styleviewer"><pre class="format">Ceci est un texte</pre></pre>
                 <div class="btns">
                     <button class="previous" onclick="previous()"><-</button>
                     <button class="next" onclick="next()">-></button>
+                </div>
+                <p>Comme vous avez dû le comprendre, le style appliqué est en fonction de la classe mis sur l'élément qui est formatté.</p>
+                <div class="mobileHide">
+                    <p>Voici une liste des style pré-définie ainsi que leur classe:</p>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>classe</th>
+                                <th>style</th>
+                                <th>exemple</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>vscode</td>
+                                <td>Le style par défaut de vscode</td>
+                                <td>
+                                    <pre class="format vscode const">
+                                        <h1 class="titre exemple">hello !</h1>
+                                        <!-- une note -->
+                                    </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sublime</td>
+                                <td>Le style par défaut de sublime text</td>
+                                <td>
+                                    <pre class="format sublime const">
+                                        <h1 class="titre exemple">hello !</h1>
+                                        <!-- une note -->
+                                    </pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>css1</td>
+                                <td>Un style personnalisé (n°1)</td>
+                                <td>
+                                    <pre class="format css1 const">
+                                        <h1 class="titre exemple">hello !</h1>
+                                        <!-- une note -->
+                                    </pre>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div id="htmlformat:exemples" class="ex">
@@ -420,7 +489,7 @@
                     </table>
                 </div>
                 <h4>Avec htmlFormat:</h4>
-                <pre class="vscode format">
+                <pre class="format">
                     <div class="div">
                         <h1 id="un-titre">Ceci est un titre</h1>
                     </div>

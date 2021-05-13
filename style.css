@@ -257,6 +257,7 @@ main table {
     border-collapse: collapse;
     max-width: 75%;
 }
+
 .mobile main table {
     max-width: 100%;
 
@@ -269,9 +270,12 @@ main table thead {
     text-decoration: underline;
 }
 
-main table thead tr>th:nth-child(2) {
-    border:0 solid var(--semiDarkColor);
+main table thead tr>th {
+    border: 0 solid var(--semiDarkColor);
     border-left-width: 2.5pt;
+}
+main table thead tr>th:first-child {
+    border: none;
 }
 
 main table tbody tr {
@@ -280,10 +284,13 @@ main table tbody tr {
 main table tbody tr {
     border-width: 1.5pt 0;
 }
-main table tbody tr>*:nth-child(1) {
+main table tbody tr>* {
     border: inherit;
-    border-right-width: 2.5pt;
-    border-right-style: solid;
+    border-left-width: 2.5pt;
+    border-left-style: solid;
+}
+main table tbody tr>*:nth-child(1) {
+    border: none;
     -moz-user-select: all;
     -webkit-user-select: all;
     user-select: all;
@@ -294,7 +301,9 @@ main table tbody tr:nth-child(even) {
 main table tr>* {
     width: 50%;
     padding: 15pt;
-
+}
+main table pre {
+    text-align: initial;
 }
 
 main table tfoot {
@@ -385,6 +394,25 @@ section ol li {
     margin: 5pt 0;
 }
 
+/* cpser */
+.cps-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+    padding: 15pt;
+    color: black;
+    border-radius: 5pt;
+}
+.cps-result>* {
+    margin: 5pt 0;
+}
+.cps-result>*:not(p) {
+    width: 25%;
+    text-align: center;
+    min-height: 50pt;
+}
+
 /* htmlFormat */
 
 .unformated {
@@ -439,6 +467,12 @@ section ol li {
 
 /* medias */
 
+@media screen and (max-width: 415px) {
+    table {
+        font-size: 0.3em;
+    }
+}
+
 @media screen and (max-width: 375px) {
     .menu>li {
         margin: 0 5pt;
@@ -458,4 +492,8 @@ section ol li {
         margin-left: 50%;
         transform: translateX(-50%);
     }
+}
+
+.mobile .mobileHide {
+    display: none;
 }
