@@ -471,8 +471,14 @@ section ol li {
     table {
         font-size: 0.6em;
     }
-    table td, table th {
-        padding: 2.5pt !important;
+    table td {
+        padding: 5pt !important;
+    }
+    table th {
+        padding: 7.5pt !important;
+    }
+    table tfoot {
+        padding: 5pt;
     }
 }
 
