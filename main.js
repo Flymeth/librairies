@@ -57,6 +57,7 @@ let previousBtn = document.querySelector('button.previous')
 let styles = [
     "vscode",
     "sublime",
+    "devtools",
     "css1"
 ]
 let actualStyle = parseInt(document.cookie.toString().split(';')[0].split('=')[1])
@@ -71,11 +72,9 @@ function setStyle(nb, newNb) {
     document.cookie = `code_style=${newNb}`
 }
 if(isNaN(actualStyle)) {
-    actualStyle=0
-    setStyle(null, 0)
-}else {
-    setStyle(null, actualStyle)
+	actualStyle=0
 }
+setStyle(null, actualStyle)
 function next() {
     let nb = actualStyle
     actualStyle++
