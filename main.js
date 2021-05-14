@@ -71,6 +71,7 @@ function setStyle(nb, newNb) {
     document.cookie = `code_style=${newNb}`
 }
 if(isNaN(actualStyle)) {
+    actualStyle=0
     setStyle(null, 0)
 }else {
     setStyle(null, actualStyle)
