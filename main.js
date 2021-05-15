@@ -57,7 +57,10 @@ let previousBtn = document.querySelector('button.previous')
 let styles = [
     "vscode",
     "sublime",
-    "devtools",
+    "devtools-light",
+    "devtools-dark",
+    "github-dark",
+    "github-light",
     "css1"
 ]
 let actualStyle = parseInt(document.cookie.toString().split(';')[0].split('=')[1])
