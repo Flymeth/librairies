@@ -57,8 +57,8 @@ let previousBtn = document.querySelector('button.previous')
 let styles = [
     "vscode",
     "sublime",
-    "devtools-light",
     "devtools-dark",
+    "devtools-light",
     "github-dark",
     "github-light",
     "css1"
